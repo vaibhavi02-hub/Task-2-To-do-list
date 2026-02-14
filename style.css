@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* LIGHT MODE */
+body.light {
+    background: #f4f4f4;
+    color: black;
+}
+
+/* DARK MODE */
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: background 0.4s ease, transform 0.3s ease;
+}
+
+body.dark .container {
+    background: #1e1e1e;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.4);
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #0056b3;
+}
+
+/* TASK LIST */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #eee;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeIn 0.4s forwards;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+body.dark li {
+    background: #333;
+}
+
+/* Hover lift effect */
+li:hover {
+    transform: translateY(-3px);
+}
+
+/* Completed animation */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+    transition: 0.3s ease;
+}
+
+/* Remove animation */
+.fade-out {
+    animation: fadeOut 0.3s forwards;
+}
+
+/* Counter */
+.counter {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
